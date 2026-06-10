@@ -3,14 +3,14 @@ import io
 import discord
 import requests
 from PIL import Image, ImageDraw, ImageFont
-
+from dotenv import load_dotenv
+load_dotenv()  # Tải biến môi trường từ file .env
 # ==================== CONFIGURATION ====================
 # Thay vì dán token trực tiếp, hãy dùng os.getenv
 BOT_TOKEN = os.getenv("BOT_TOKEN") 
 
-# Nếu bot không tìm thấy token, hãy cho nó báo lỗi rõ ràng
 if not BOT_TOKEN:
-    print("❌ Lỗi: Chưa thiết lập biến môi trường BOT_TOKEN!")
+    print("❌ Lỗi: Không tìm thấy BOT_TOKEN trong file .env")
     exit()
 
 # 2. Điền link Webhook kênh Welcome vào đây
